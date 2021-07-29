@@ -16,7 +16,7 @@ public:
           ptr = ptr->next;
       }
  } 
-
+ 
 int main()
 {
     Node* head = NULL;

@@ -113,12 +113,12 @@ int main()
     marks.disply();
 
 // Delete in stack and return deleted value....
-//    cout<<marks.pop()<<endl;
-//     marks.disply();
+   cout<<marks.pop()<<endl;
+    marks.disply();
 
 
 // Check what data element in given position
-//    cout<<marks.peek(7);
+   cout<<marks.peek(7);
 
 
 // check Stack Top And Bottom values
