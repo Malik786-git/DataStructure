@@ -1,22 +1,22 @@
-// LINEAR QUEUE
+// CIRCULAR QUEUE
 #include <iostream>
 using namespace std;
 
-class Queue
+class CircularQueue
 {
     int size;
-    int f;    // front 
-    int r;   // reare
+    int f; // front
+    int r; // reare
     int *arr;
 
 public:
-    Queue(int s)
+    CircularQueue(int s)
     { //initialize array size and memory dynamically
         size = s;
         arr = new int(size);
-        f = r = -1;
+        f = r = 0;
     }
-    ~Queue()
+    ~CircularQueue()
     { //free memory
         delete arr;
     }
@@ -31,7 +31,7 @@ public:
     }
     int isFull()
     {
-        if (r==size-1)
+        if (((r + 1) % size) == f)
         {
             return 1;
         }
@@ -42,11 +42,11 @@ public:
     {
         if (isFull())
         {
-            cout << "Queue is Full!"<<endl;
+            cout << "Queue is Full!" << endl;
         }
         else
         {
-            r++;
+            r = (r + 1) % size;
             arr[r] = value;
         }
     }
@@ -56,60 +56,24 @@ public:
         int a = -1;
         if (isEmpty())
         {
-            cout << "Queue is EMPTY!"<<endl;
+            cout << "Queue is EMPTY!" << endl;
         }
         else
         {
-           f++;
-           a = arr[f];
+            f = (f + 1) % size;
+            a = arr[f];
         }
         return a;
     }
 };
+
 int main()
 {
-    Queue q(2);
- 
- if (q.isEmpty())
- {
-      cout<<"Empty Queue"<<endl;
- }else
- {
-      cout<<"Queue is Not Empty"<<endl;
- }
- 
+    CircularQueue q(2);
+
     q.enqueue(10);
     q.enqueue(20);
 
- if (q.isEmpty())
- {
-      cout<<"Empty Queue"<<endl;
- }else
- {
-      cout<<"Not Empty Queue"<<endl;
- }
-
-
-//  check Full Condition
- if (q.isFull())
- {
-      cout<<"Full Queue"<<endl;
- }else
- {
-      cout<<"Queue is Not Full"<<endl;
- }
-    q.dequeue();
-    q.dequeue();
-    
- if (q.isEmpty())
- {
-      cout<<"Empty Queue"<<endl;
- }else
- {
-      cout<<"Not Empty Queue"<<endl;
- }
  
     return 0;
 }
-
-
