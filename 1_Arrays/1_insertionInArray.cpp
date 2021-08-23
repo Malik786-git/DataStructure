@@ -25,12 +25,13 @@ int sortedInsertion(int arr[], int size, int element, int capacity, int index)
 }
 int main()
 {
+    //   complexity == O(size)
     int arr[100] = {1, 2, 6, 78, 88};
-    int size = 5, element = 45, index = 3;
+    int size = 5, element = 45, index = 0;
     display(arr, size);
     sortedInsertion(arr, size, element, 100, index);
     cout<<endl;
     display(arr, size+1);
-
+    
     return 0;
 }

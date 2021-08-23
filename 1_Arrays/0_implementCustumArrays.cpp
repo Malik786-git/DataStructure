@@ -37,7 +37,6 @@ public:
 
 int main()
 {
-
     intArray marks(100, 5);
     marks.setData();
     cout << endl;
