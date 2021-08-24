@@ -39,7 +39,7 @@ public:
 
 int main()
 {
-
+    
     stackArray marks(100);
   
     // check stack empty

@@ -30,7 +30,6 @@ void insertFirstNode(Node** head, int data){
    p->next = ptr;
    ptr->next = (*head);
    (*head) = ptr;
-
 }
 
 int main()
@@ -57,7 +56,6 @@ int main()
     fourth->data = 20;
     fourth->next = head;
   
-
 
     CircularTraversal(head);
     cout<<"after"<<endl;

@@ -118,8 +118,7 @@ int main()
 
 
 // Check what data element in given position
-   cout<<marks.peek(7);
-
+   cout<<marks.peek(2);
 
 // check Stack Top And Bottom values
    cout<<"\nTop value = "<<marks.stackTop()

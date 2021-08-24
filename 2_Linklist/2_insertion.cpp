@@ -40,9 +40,10 @@ void push(Node** head, int data)
  
     /* 4. move the head to point to the new node */
     (*head) = new_node;
+
 }
 
-// 2. Insert B/W -> Complexity = O(2)
+// 2. Insert B/W -> Complexity = O(n)
  void insertBetween(Node **head, int data, int index ){
      Node* newNode = new Node();
      Node* p = *head;
@@ -55,7 +56,6 @@ void push(Node** head, int data)
 
      newNode->data = data;
      newNode->next = p->next;
-
      p->next = newNode;
  }
 
@@ -93,23 +93,23 @@ int main()
     second = new Node();
     third = new Node();
 
-    head->data = 5; 
+    head->data = 7; 
     head->next = second; 
 
-    second->data = 6;
+    second->data = 8;
     second->next = third;
 
-    third->data = 7; 
+    third->data = 10; 
     third->next = NULL;
   cout<<"Before............."<<endl<<endl;
    Traversal(head);
   cout<<"\nAfter............."<<endl<<endl;
 
-//    push(&head,4);
-//    push(&head,3);
-//    insertBetween(&head,1,2);
+      push(&head,6);
+   push(&head,3);
+   insertBetween(&head,9,2);
 //    insertEnd(&head,8);
-//    insertAfter(third,8);
+   insertAfter(third,8);
 
 
    Traversal(head);

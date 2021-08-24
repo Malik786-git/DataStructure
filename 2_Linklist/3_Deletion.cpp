@@ -36,6 +36,7 @@ Node *deleteAtIndex(Node *head, int index)
 
     p->next = q->next;
     delete q;
+    
     return head;
 }
 //3. Delete last Node
